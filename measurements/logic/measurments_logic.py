@@ -5,8 +5,26 @@ def get_measurements():
     return measurements
 
 def get_measurement(mes_pk:int)->Measurement:
-    measurment = Measurement.objects.get(pk=var_pk)
+    measurment = Measurement.objects.get(pk=mes_pk)
     return measurment
-def update_variable(mes_pk:int, new_mes):
-    variable = get_measurement(mes_pk)
-    variable
+
+def update_variable(mes_pk:int, new_mes)->Measurement:
+    measurment = get_measurement(mes_pk)
+    measurment.variable= new_mes["variable"]
+    measurment.value = new_mes["value"]
+    measurment.unit = new_mes["unit"]
+    measurment.place = new_mes["place"]
+    measurment.dateTime = new_mes["dateTime"]
+    measurment.save()
+    return measurment
+
+def create_measurement(mes)->Measurement:
+    measurment = Measurement(
+        variable=mes["variable"],
+        value = mes["value"],
+        unit = mes["unit"],
+        place = mes["place"],
+        dateTime = mes["dateTime"]
+        )
+    measurment.save()
+    return measurment
