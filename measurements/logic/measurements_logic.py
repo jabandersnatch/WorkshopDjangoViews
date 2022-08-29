@@ -8,7 +8,7 @@ def get_measurement(mes_pk:int)->Measurement:
     measurment = Measurement.objects.get(pk=mes_pk)
     return measurment
 
-def update_measurements(mes_pk:int, new_mes)->Measurement:
+def update_measurement(mes_pk:int, new_mes)->Measurement:
     measurment = get_measurement(mes_pk)
     measurment.variable= new_mes["variable"]
     measurment.value = new_mes["value"]
@@ -27,4 +27,9 @@ def create_measurement(mes)->Measurement:
         dateTime = mes["dateTime"]
         )
     measurment.save()
+    return measurment
+
+def delete_measurement(mes_pk:int):
+    measurment = get_measurement(mes_pk)
+    measurment.delete()
     return measurment

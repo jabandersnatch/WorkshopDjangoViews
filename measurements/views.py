@@ -22,6 +22,17 @@ def measurements_view(request):
         measurment_dto = ml.create_measurement(json.loads(request.body))
         measurment = serializers.serialize(json, [measurment_dto,])
         return HttpResponse(measurment, 'application/json')
+
+    if request.method == 'PUT':
+        measurment_dto = ml.update_measurement(json.loads(request.body))
+        measurment = serializers.serialize(json, [measurment_dto,])
+        return HttpResponse(measurment, 'application/json')
+    
+    if request.method == 'DELETE':
+        id = request.GET.get('id',None)
+        ml.delete_measurement(id)
+        return HttpResponse(status=204)
+
 @csrf_exempt
 def measurement_view(request, pk):
     if request.method == 'GET':
