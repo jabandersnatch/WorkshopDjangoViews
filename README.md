@@ -18,3 +18,21 @@ Example:
 ```bash
 pipenv run python manage.py makemigrations 
 ```
+
+## Imágenes de los JSON
+### Crear Measurement
+![Crear Measurement](./Doc/Create_m.png)
+
+### GET Measurements
+![Get Measurements](./Doc/Get_ms.png)
+
+### GET Measurement
+![Get Measurement](./Doc/Get_m.png)
+
+### PUT Measurement
+![PUT Measurements](./Doc/Update_m.png)
+
+### DELETE Measurements
+![DELETE Measurements](./Doc/Del_m.png)
+
+Las pruebas POSTMAN de Meadurements están en el archivo "Measurements.postman_collection.json"

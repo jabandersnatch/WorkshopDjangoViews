@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
      "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ArquiSoft",
-        "USER": "arquisoftusr",
-        "PASSWORD": "ArquiSoft123",
+        "NAME": "ASDB",
+        "USER": "ASUser",
+        "PASSWORD": "ASUser",
         "HOST": "localhost",
         "PORT": "5432",
     }

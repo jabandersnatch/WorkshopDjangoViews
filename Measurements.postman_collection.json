@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "628792b0-7c4f-44a1-89c4-a1543c423d85",
+		"name": "Measurements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23055200"
+	},
+	"item": [
+		{
+			"name": "Add new Measurement",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JSONData = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"MID\", JSONData[0].pk);\r",
+							"console.log(JSONData[0].pk)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 53,\r\n    \"unit\": \"km\",\r\n    \"place\": \"Colombia\",\r\n    \"dateTime\": \"2022-08-29T04:10:56.740Z\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/measurements/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Measurements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/measurements/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Measurement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/measurements/{{MID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"measurements",
+						"{{MID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Measurement",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 53,\r\n    \"unit\": mm,\r\n    \"place\": Colombia\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/measurements/{{MID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"measurements",
+						"{{MID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete measurement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/measurements/{{MID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"measurements",
+						"{{MID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

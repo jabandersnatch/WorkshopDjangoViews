@@ -1,4 +1,5 @@
 from ..models import Measurement
+from variables.logic import variables_logic
 
 def get_measurements():
     measurements = Measurement.objects.all()
@@ -20,7 +21,7 @@ def update_measurement(mes_pk:int, new_mes)->Measurement:
 
 def create_measurement(mes)->Measurement:
     measurment = Measurement(
-        variable=mes["variable"],
+        variable=variables_logic.get_variable(mes["variable"]),
         value = mes["value"],
         unit = mes["unit"],
         place = mes["place"],
