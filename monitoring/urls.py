@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home),
     path('variables/', include('variables.urls')),
-    path('measurments/', include('measurments.urls'))
+    path('measurements/', include('measurements.urls'))
 ]

@@ -8,7 +8,7 @@ def get_measurement(mes_pk:int)->Measurement:
     measurment = Measurement.objects.get(pk=mes_pk)
     return measurment
 
-def update_variable(mes_pk:int, new_mes)->Measurement:
+def update_measurements(mes_pk:int, new_mes)->Measurement:
     measurment = get_measurement(mes_pk)
     measurment.variable= new_mes["variable"]
     measurment.value = new_mes["value"]

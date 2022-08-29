@@ -1,4 +1,4 @@
-from .logic import measurments_logic as ml
+from .logic import measurements_logic as ml
 from django.http import HttpResponse
 from django.core import serializers
 import json
